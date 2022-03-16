@@ -1,0 +1,63 @@
+{
+	"emulators": {
+		"default": {
+			"port": 3569,
+			"serviceAccount": "emulator-account"
+		}
+	},
+	"contracts": {
+		"TeleRacingPreSale":"./contracts/TeleRacingPreSale.cdc"
+	},
+	"networks": {
+		"emulator": "127.0.0.1:3569",
+		"mainnet": "access.mainnet.nodes.onflow.org:9000",
+		"testnet": "access.devnet.nodes.onflow.org:9000"
+	},
+	"accounts": {
+		"emulator-account": {
+			"address": "f8d6e0586b0a20c7",
+			"key": "7253ed9c16273b7f9ca1c99cbc3a7092abeaf33167d2aa42bc1dd0748c958880"
+		},
+		"three": {
+			"address": "f9e8ec63f4ed9cb9",
+			"key": "00503157bee6dcf083f81b5f38eb4f52478652c37e872e863435ca5440cb78ea"
+		},
+		"test-account":{
+			"address": "f04eba8c8366000e",
+			"key" : {
+				"type":"hex",
+				"index":0,
+				"signatureAlgorithm" : "ECDSA_secp256k1",
+				"hashAlgorithm" : "SHA3_256",
+				"privateKey" : "ae4b44db63fe842289e4a5438746e97ec49501fbc915ac069cde792ee5698671"
+			}
+		},
+		"one":{
+			"address": "5ebe94a854587a1e",
+			"key" : {
+				"type":"hex",
+				"index":0,
+				"signatureAlgorithm" : "ECDSA_secp256k1",
+				"hashAlgorithm" : "SHA3_256",
+				"privateKey" : "fc784c7cb125b4e6dfd4b2eba27f0cf941be20b11ea83a657483baa41b24a377"
+			}
+		},
+		"two":{
+			"address": "575e2a97ebf9c09b",
+			"key" : {
+				"type":"hex",
+				"index":0,
+				"signatureAlgorithm" : "ECDSA_secp256k1",
+				"hashAlgorithm" : "SHA3_256",
+				"privateKey" : "226df3f266561e90fb97fac751011b7b7679833e357422df4786ccd11f9117c9"
+			}
+		}
+	},
+	"deployments": {
+		"testnet":{
+			"test-account":[
+				"TeleRacingPreSale"
+			]
+		}
+	}
+}

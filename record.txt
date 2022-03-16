@@ -1,0 +1,7 @@
+一些命令行操作.
+flow transactions send ./transaction/setup_account.cdc --signer test-account --network testnet
+flow transactions send ./transaction/mint_nft.cdc 0x5ebe94a854587a1e Name-Car2 Descri-Car2 Thumbnail-Car2 5  --signer test-account --network testnet
+flow transactions send ./transaction/setup_account.cdc --signer three --network testnet
+
+
+flow scripts execute ./scripts/get_collection_ids.cdc 0x5ebe94a854587a1e --network testnet

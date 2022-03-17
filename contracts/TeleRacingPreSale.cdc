@@ -1,7 +1,7 @@
-import NonFungibleToken from "./standard/NonFungibleToken.cdc"
-import MetadataViews from "./standard/MetadataViews.cdc"
-// import NonFungibleToken from 0x631e88ae7f1d7c20
-// import MetadataViews from 0x631e88ae7f1d7c20
+import NonFungibleToken from 0x631e88ae7f1d7c20
+import MetadataViews from 0x631e88ae7f1d7c20
+// import NonFungibleToken from "./standard/NonFungibleToken.cdc"
+// import MetadataViews from "./standard/MetadataViews.cdc"
 
 pub contract TeleRacingPreSale: NonFungibleToken {
 
@@ -25,7 +25,7 @@ pub contract TeleRacingPreSale: NonFungibleToken {
         //Change 1.Edition Number
         //Here are just two fields. There is no practical effect at present.
         pub var editionNumber : Int64
-        access(self) let maxEdition: Int64 
+        pub var maxEdition: Int64 
 
         init(
             id: UInt64,
@@ -33,13 +33,14 @@ pub contract TeleRacingPreSale: NonFungibleToken {
             description: String,
             thumbnail: String,
             editionNumber:Int64,
+            maxEdition: Int64 
         ) {
             self.id = id
             self.name = name
             self.description = description
             self.thumbnail = thumbnail
             self.editionNumber = editionNumber
-            self.maxEdition = 100
+            self.maxEdition = maxEdition
         }
     
         pub fun getViews(): [Type] {
@@ -54,8 +55,9 @@ pub contract TeleRacingPreSale: NonFungibleToken {
                     return MetadataViews.Display(
                         name: self.name,
                         description: self.description,
-                        thumbnail: MetadataViews.HTTPFile(
-                            url: self.thumbnail
+                        thumbnail: MetadataViews.IPFSFile(
+                            cid: self.thumbnail,
+                            path: nil
                         )
                     )
             }
@@ -159,6 +161,7 @@ pub contract TeleRacingPreSale: NonFungibleToken {
             description: String,
             thumbnail: String,
             editionNumber:Int64,
+            maxEdition:Int64
         ) {
 
             // create a new NFT
@@ -168,6 +171,7 @@ pub contract TeleRacingPreSale: NonFungibleToken {
                 description: description,
                 thumbnail: thumbnail,
                 editionNumber:editionNumber,
+                maxEdition:maxEdition
             )
 
             // deposit it in the recipient's account using their reference
@@ -203,3 +207,4 @@ pub contract TeleRacingPreSale: NonFungibleToken {
         emit ContractInitialized()
     }
 }
+ 

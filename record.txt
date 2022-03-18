@@ -1,7 +1,22 @@
-一些命令行操作.
-flow transactions send ./transaction/setup_account.cdc --signer test-account --network testnet
-flow transactions send ./transaction/mint_nft.cdc 0x5ebe94a854587a1e Name-Car2 Descri-Car2 Thumbnail-Car2 5  --signer test-account --network testnet
-flow transactions send ./transaction/setup_account.cdc --signer three --network testnet
+1. setupAccount: flow transactions send ./transactiontup_account.cdc --signer test1 --network testnet
+2. mintNFT: flow transactions send ./transaction/mint_nft.cdc --args-json='[{"type": "Address", "value": "0x027cb9b03cf921ae"},{"type": "String", "value": "name1"},{"type": "String", "value": "Des1"},{"type": "String", "value": "ipfsHash"},{"type": "Int64", "value": "1"},{"type": "Int64", "value": "100"} ]' --signer test0 --network testnet
+3. transferNFT: flow transactions send ./transaction/transfer_nft.cdc 0x09568b29f07c5f87 0 --signer test1 --network testnet
+4. destroyNFT: flow transactions send ./transaction/destroy_nft.cdc 1 --signer test1 --network testnet
 
+
+查询特定地址的collectionids: flow scripts execute ./scripts/get_collection_ids.cdc 0x09568b29f07c5f87 --network testnet
+查询特定地址的collection数量: flow scripts execute ./scripts/get_collection_length.cdc 0x09568b29f07c5f87 --network testnet
+获取特定地址以及特定CollectionID的MetaData: flow scripts execute ./scripts/get_nft_metadata.cdc 0x09568b29f07c5f87 0 --network testnet
+获取NFT这一系列的总量: flow scripts execute ./scripts/get_total_supply.cdc
+
+
+
+一些命令行操作[旧的].
+flow transactions send ./transactiontup_account.cdc --signer test-account --network testnet
+flow transactions send ./transaction/mint_nft.cdc 0x5ebe94a854587a1e Name-Car2 Descri-Car2 Thumbnail-Car2 5  --signer test-account --network testnet
+flow transactions send ./transactiontup_account.cdc --signer three --network testnet
 
 flow scripts execute ./scripts/get_collection_ids.cdc 0x5ebe94a854587a1e --network testnet
+
+
+ 

@@ -2,7 +2,7 @@
 // import TeleRacingPreSale from "../contracts/TeleRacingPreSale.cdc"
 
 import NonFungibleToken from 0x631e88ae7f1d7c20
-import TeleRacingPreSale from 0xf04eba8c8366000e
+import TeleRacingPreSale from 0x09568b29f07c5f87
 
 // This script uses the NFTMinter resource to mint a new NFT
 // It must be run with the account that has the minter resource
@@ -14,6 +14,7 @@ transaction(
     description: String,
     thumbnail: String,
     editionNumber:Int64,
+    maxEdition:Int64,
 ) {
 
     // local variable for storing the minter reference
@@ -38,7 +39,9 @@ transaction(
             name: name,
             description: description,
             thumbnail: thumbnail,
-            editionNumber: editionNumber
+            editionNumber: editionNumber,
+            maxEdition:maxEdition
         )
     }
 }
+ 

@@ -5,3 +5,5 @@ flow transactions send ./transaction/setup_account.cdc --signer three --network 
 
 
 flow scripts execute ./scripts/get_collection_ids.cdc 0x5ebe94a854587a1e --network testnet
+
+flow transactions send ./transaction/mint_nft.cdc --args-json='[{"type": "Address", "value": "0x027cb9b03cf921ae"},{"type": "String", "value": "name1"},{"type": "String", "value": "Des1"},{"type": "String", "value": "ipfsHash"},{"type": "Int64", "value": "1"},{"type": "Int64", "value": "100"} ]' --signer test0 --network testnet

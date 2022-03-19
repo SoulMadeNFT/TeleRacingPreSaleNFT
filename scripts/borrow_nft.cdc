@@ -1,5 +1,8 @@
-import TeleRacingPreSale from 0xf04eba8c8366000e
+// import NonFungibleToken from "../contracts/standard/NonFungibleToken.cdc"
+// import TeleRacingPreSale from "../contracts/TeleRacingPreSale.cdc"
+
 import NonFungibleToken from 0x631e88ae7f1d7c20
+import TeleRacingPreSale from 0x09568b29f07c5f87
 
 //Return the reference about specific nftid under this account
 //No useful for now

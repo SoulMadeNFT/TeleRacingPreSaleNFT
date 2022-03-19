@@ -1,4 +1,4 @@
-// import NonFungibleToken from "../contracts/standard/NonFungibleToken.cdc"
+// import NonFungibleToken from "../contracts/NonFungibleToken.cdc"
 // import TeleRacingPreSale from "../contracts/TeleRacingPreSale.cdc"
 
 import TeleRacingPreSale from 0x09568b29f07c5f87

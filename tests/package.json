@@ -1,0 +1,22 @@
+{
+  "name": "teleracingnft-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest --runInBand"
+  },
+	"author": "SoulMade",
+	"devDependencies": {
+		"@babel/core": "^7.14.0",
+		"@babel/preset-env": "^7.14.1",
+		"@onflow/types": "0.0.6",
+		"babel-jest": "^27.0.2",
+		"flow-js-testing": "^0.2.3-alpha.4",
+		"jest": "^27.0.4",
+		"prettier": "^2.3.0"
+	},
+	"dependencies": {
+		"@onflow/fcl": "0.0.77"
+	}
+}

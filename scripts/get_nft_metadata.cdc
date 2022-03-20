@@ -1,7 +1,8 @@
-// import TeleRacingPreSale from "../contracts/TeleRacingPreSale.cdc"
-// import MetadataViews from "../contracts/standard/MetadataViews.cdc"
-import MetadataViews from 0x631e88ae7f1d7c20
-import TeleRacingPreSale from 0x09568b29f07c5f87
+import TeleRacingPreSale from "../contracts/TeleRacingPreSale.cdc"
+import MetadataViews from "../contracts/MetadataViews.cdc"
+
+// import MetadataViews from 0x631e88ae7f1d7c20
+// import TeleRacingPreSale from 0x09568b29f07c5f87
 
 //For specific address and nftID, return the metadata.
 //the nftID is totalsupply sequence number.

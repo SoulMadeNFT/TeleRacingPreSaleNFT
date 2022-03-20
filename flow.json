@@ -6,7 +6,10 @@
 		}
 	},
 	"contracts": {
-		"TeleRacingPreSale":"./contracts/TeleRacingPreSale.cdc"
+		"TeleRacingPreSale":"./contracts/TeleRacingPreSale.cdc",
+		"MetadataViews":"./contracts/MetadataViews.cdc",
+		"NonFungibleToken":"./contracts/NonFungibleToken.cdc",
+		"Hello":"./contracts/Hello.cdc"
 	},
 	"networks": {
 		"emulator": "127.0.0.1:3569",
@@ -67,12 +70,18 @@
 		"test3": {
 			"address": "e38e1921cb4273eb",
 			"key": "66edde2c1ddee9c2d5f0941c0b437382a6cacaeb7402752be1c38c94de49a660"
+		},
+		"emu":{
+			"address": "01cf0e2f2f715450",
+			"key": "af14bbaa79eaee5e13da9a91194eb7be5e83d29fc03bc50d0c5a36d533630322"
 		}
 	},
 	"deployments": {
-		"testnet":{
-			"test0":[
-				"TeleRacingPreSale"
+		"emulator":{
+			"emulator-account":[
+				"TeleRacingPreSale",
+				"MetadataViews",
+				"NonFungibleToken"
 			]
 		}
 	}

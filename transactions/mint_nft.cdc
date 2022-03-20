@@ -1,8 +1,8 @@
-// import NonFungibleToken from "../contracts/standard/NonFungibleToken.cdc"
-// import TeleRacingPreSale from "../contracts/TeleRacingPreSale.cdc"
+import NonFungibleToken from "../contracts/NonFungibleToken.cdc"
+import TeleRacingPreSale from "../contracts/TeleRacingPreSale.cdc"
 
-import NonFungibleToken from 0x631e88ae7f1d7c20
-import TeleRacingPreSale from 0x09568b29f07c5f87
+// import NonFungibleToken from 0x631e88ae7f1d7c20
+// import TeleRacingPreSale from 0x09568b29f07c5f87
 
 // This script uses the NFTMinter resource to mint a new NFT
 // It must be run with the account that has the minter resource

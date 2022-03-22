@@ -4,7 +4,7 @@ import { deployContractByName, executeScript, sendTransaction } from "flow-js-te
 const UFIX64_PRECISION = 8;
 
 //UFix64 values shall be always passed as strings
-export const toUFix64 = (value) => value.toUFix64(UFIX64_PRECISION)
+export const toUFix64 = (value) => value.toFixed(UFIX64_PRECISION)
 
 export const getAdminAddress = async() => getAccountAddress("Admin");
 

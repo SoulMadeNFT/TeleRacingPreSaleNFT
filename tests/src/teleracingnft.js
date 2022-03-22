@@ -21,7 +21,7 @@ export const deployTeleracing = async() =>{
  * @returns {Promise<[{*} txResult, {error} error]>}
  * */
 export const setupTeleracingOnAccount = async (account) => {
-	const name = "setup_account";
+	const name = "teleracing/setup_account";
 	const signers = [account];
 
 	return sendTransaction({ name, signers });
@@ -33,7 +33,7 @@ export const setupTeleracingOnAccount = async (account) => {
  * @returns {UInt64} - number of NFT minted so far
  * */
 export const getTeleracingSupply = async () => {
-	const name = "get_total_supply";
+	const name = "teleracing/get_total_supply";
 
 	return executeScript({ name });
 };
@@ -47,7 +47,7 @@ export const getTeleracingSupply = async () => {
 export const mintTeleracing = async (recipient, _name, description, thumbnail, editionNumber, maxEdition) => {
 	const Admin = await getAdminAddress();
 
-	const name = "mint_nft";
+	const name = "teleracing/mint_nft";
 	const args = [recipient, _name, description, thumbnail, editionNumber, maxEdition];
 	const signers = [Admin];
 
@@ -65,7 +65,7 @@ export const mintTeleracing = async (recipient, _name, description, thumbnail, e
  * @returns {Promise<*>}
  * */
 export const transferTeleracing = async (sender, recipient, itemId) => {
-	const name = "transfer_nft";
+	const name = "teleracing/transfer_nft";
 	const args = [recipient, itemId];
 	const signers = [sender];
 
@@ -82,7 +82,7 @@ export const transferTeleracing = async (sender, recipient, itemId) => {
  * @returns {UInt64}
  * */
 export const getTeleracing = async (account, itemID) => {
-	const name = "get_nft_metadata";
+	const name = "teleracing/get_nft_metadata";
 	const args = [account, itemID];
 
 	return executeScript({ name, args });
@@ -96,7 +96,7 @@ export const getTeleracing = async (account, itemID) => {
  * @returns {UInt64}
  * */
 export const getTeleRacingCount = async (account) => {
-	const name = "get_collection_length";
+	const name = "teleracing/get_collection_length";
 	const args = [account];
 	return executeScript({ name, args });
 };
@@ -108,7 +108,7 @@ export const getTeleRacingCount = async (account) => {
  * @returns [UInt64]
  * */
 export const getTeleRacingids = async (account) => {
-	const name = "get_collection_ids";
+	const name = "teleracing/get_collection_ids";
 	const args = [account];
 	return executeScript({ name, args });
 };

@@ -91,7 +91,7 @@ pub fun main(address: Address, listingResourceID: UInt64): ListingItem? {
             }
         }
     }
-    log("Here")
+    
 
     return nil
 }

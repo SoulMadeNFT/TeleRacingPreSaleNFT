@@ -39,9 +39,9 @@ pub struct ListingItem {
 }
 
 pub fun dwebURL(_ file: MetadataViews.IPFSFile): String {
-    var url = "https://"
+    var url = "ipfs://"
         .concat(file.cid)
-        .concat(".ipfs.dweb.link/")
+
   
     if let path = file.path {
         return url.concat(path)
@@ -60,7 +60,7 @@ pub fun main(address: Address, listingResourceID: UInt64): ListingItem? {
             let details = listing.getDetails()
 
             let itemID = details.nftID
-            log(itemID)
+
             let itemPrice = details.salePrice
         
             if let collection = getAccount(address).getCapability<&TeleRacingPreSale.Collection{NonFungibleToken.CollectionPublic, TeleRacingPreSale.TeleRacingPreSaleCollectionPublic}>(TeleRacingPreSale.CollectionPublicPath).borrow() {

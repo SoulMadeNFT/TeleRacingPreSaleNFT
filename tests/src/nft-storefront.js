@@ -81,6 +81,20 @@ export const removeListing = async (owner, itemId) => {
 export const getListingCount = async (account) => {
 	const name = "nftstorefront/get_listings_length";
 	const args = [account];
-
 	return executeScript({ name, args });
+};
+
+/*
+ * Buys item with id equal to **item** name for **price** from **seller**.
+ * @param {string} buyer - buyer account address
+ * @param {String} name - resource nft name of item to sell
+ * @param {string} seller - seller account address
+ * @returns {Promise<[{*} txResult, {error} error]>}
+ * */
+export const purchaseByName = async (buyer,itemname,seller) => {
+	const name = "nftstorefront/purchase_byname";
+	const args = [itemname, seller];
+	const signers = [buyer];
+
+	return sendTransaction({ name, args, signers });
 };

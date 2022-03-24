@@ -1,5 +1,5 @@
 1. setupAccount: flow transactions send ./transactiontup_account.cdc --signer test1 --network testnet
-2. mintNFT: flow transactions send ./transaction/mint_nft.cdc --args-json='[{"type": "Address", "value": "0x027cb9b03cf921ae"},{"type": "String", "value": "name1"},{"type": "String", "value": "Des1"},{"type": "String", "value": "ipfsHash"},{"type": "Int64", "value": "1"},{"type": "Int64", "value": "100"} ]' --signer test0 --network testnet
+2. mintNFT: flow transactions send ./transaction/mint_nft.cdc --args-json='[{"type": "Address", "value": "0xf8d6e0586b0a20c7"},{"type": "String", "value": "name1"},{"type": "String", "value": "Des1"},{"type": "String", "value": "ipfsHash"},{"type": "Int64", "value": "1"},{"type": "Int64", "value": "100"} ]' --signer test0 --network testnet
 3. transferNFT: flow transactions send ./transaction/transfer_nft.cdc 0x09568b29f07c5f87 0 --signer test1 --network testnet
 4. destroyNFT: flow transactions send ./transaction/destroy_nft.cdc 1 --signer test1 --network testnet
 

@@ -75,6 +75,17 @@ describe("Teleracing NFT",()=>{
         expect(metadata.maxEdition).toBe(100);
     })
 
+    it("collection length should be 1 after mint 1",async () => {
+        //setup account for collection
+        await deployTeleracing();
+        const Alice = await getAccountAddress("Alice");
+        await setupTeleracingOnAccount(Alice)
+        await mintTeleracing(Alice,"name1","des1","hash1",1,100)
+        //once setup done, the number of nft in this account collection should be 0
+		const [itemCount] = await shallResolve(getTeleRacingCount(Alice))
+		expect(itemCount).toBe(1);
+    })
+
 //-----------------------------------------------------------------------------------------
     it("should be able to create a new empty NFT collection",async () => {
         //setup account for collection

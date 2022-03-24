@@ -1,5 +1,5 @@
-import NonFungibleToken from "../contracts/NonFungibleToken.cdc"
-import TeleRacingPreSale from "../contracts/TeleRacingPreSale.cdc"
+import NonFungibleToken from "../../contracts/NonFungibleToken.cdc"
+import TeleRacingPreSale from "../../contracts/TeleRacingPreSale.cdc"
 
 // import NonFungibleToken from 0x631e88ae7f1d7c20
 // import TeleRacingPreSale from 0x09568b29f07c5f87
@@ -13,8 +13,8 @@ transaction(
     name: String,
     description: String,
     thumbnail: String,
-    editionNumber:Int64,
-    maxEdition:Int64,
+    editionNumber:UInt64,
+    maxEdition:UInt64,
 ) {
 
     // local variable for storing the minter reference

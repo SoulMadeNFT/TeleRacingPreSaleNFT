@@ -1,88 +1,75 @@
 {
-	"emulators": {
-		"default": {
-			"port": 3569,
-			"serviceAccount": "emulator-account"
-		}
-	},
-	"contracts": {
-		"TeleRacingPreSale":"./contracts/TeleRacingPreSale.cdc",
-		"MetadataViews":"./contracts/MetadataViews.cdc",
-		"NonFungibleToken":"./contracts/NonFungibleToken.cdc",
-		"Hello":"./contracts/Hello.cdc"
-	},
-	"networks": {
-		"emulator": "127.0.0.1:3569",
-		"mainnet": "access.mainnet.nodes.onflow.org:9000",
-		"testnet": "access.devnet.nodes.onflow.org:9000"
-	},
-	"accounts": {
-		"emulator-account": {
-			"address": "f8d6e0586b0a20c7",
-			"key": "7253ed9c16273b7f9ca1c99cbc3a7092abeaf33167d2aa42bc1dd0748c958880"
-		},
-		"three": {
-			"address": "f9e8ec63f4ed9cb9",
-			"key": "00503157bee6dcf083f81b5f38eb4f52478652c37e872e863435ca5440cb78ea"
-		},
-		"test-account":{
-			"address": "f04eba8c8366000e",
-			"key" : {
-				"type":"hex",
-				"index":0,
-				"signatureAlgorithm" : "ECDSA_secp256k1",
-				"hashAlgorithm" : "SHA3_256",
-				"privateKey" : "ae4b44db63fe842289e4a5438746e97ec49501fbc915ac069cde792ee5698671"
-			}
-		},
-		"one":{
-			"address": "5ebe94a854587a1e",
-			"key" : {
-				"type":"hex",
-				"index":0,
-				"signatureAlgorithm" : "ECDSA_secp256k1",
-				"hashAlgorithm" : "SHA3_256",
-				"privateKey" : "fc784c7cb125b4e6dfd4b2eba27f0cf941be20b11ea83a657483baa41b24a377"
-			}
-		},
-		"two":{
-			"address": "575e2a97ebf9c09b",
-			"key" : {
-				"type":"hex",
-				"index":0,
-				"signatureAlgorithm" : "ECDSA_secp256k1",
-				"hashAlgorithm" : "SHA3_256",
-				"privateKey" : "226df3f266561e90fb97fac751011b7b7679833e357422df4786ccd11f9117c9"
-			}
-		},
-		"test0": {
-			"address": "09568b29f07c5f87",
-			"key": "2fe755dc14e58e5d35c9308dc37396e698afe4158f6d291c208298a82e9a7dc3"
-		},
-		"test1": {
-			"address": "027cb9b03cf921ae",
-			"key": "a25bbfab36957f4fbd92acd04dd6b09f508505d692e25e56f1fb7a66e5e80ce2"
-		},
-		"test2": {
-			"address": "f04f655eb4072b10",
-			"key": "0dff17084a2110d99a91575b7a2682465d3a94b7e69130ff526838ee7f045753"
-		},
-		"test3": {
-			"address": "e38e1921cb4273eb",
-			"key": "66edde2c1ddee9c2d5f0941c0b437382a6cacaeb7402752be1c38c94de49a660"
-		},
-		"emu":{
-			"address": "01cf0e2f2f715450",
-			"key": "af14bbaa79eaee5e13da9a91194eb7be5e83d29fc03bc50d0c5a36d533630322"
-		}
-	},
-	"deployments": {
-		"emulator":{
-			"emulator-account":[
-				"TeleRacingPreSale",
-				"MetadataViews",
-				"NonFungibleToken"
-			]
-		}
-	}
+    "emulators": {
+      "default": {
+        "port": 3569,
+        "serviceAccount": "emulator-account"
+      }
+    },
+    "devWallet": {
+      "accessNode": {
+        "endpoint": "http://localhost:8080"
+      },
+      "port": 8701
+    },
+    "contracts": {
+      "TeleRacingPreSale": "./contracts/TeleRacingPreSale.cdc",
+      "NFTStorefront": {
+        "source": "./contracts/NFTStorefront.cdc",
+        "aliases": {
+          "testnet": "0x94b06cfca1d8a476"
+        }
+      },
+      "NonFungibleToken": {
+        "source": "./contracts/NonFungibleToken.cdc",
+        "aliases": {
+          "emulator": "0xf8d6e0586b0a20c7",
+          "testnet": "0x631e88ae7f1d7c20"
+        }
+      },
+      "MetadataViews": {
+        "source": "./contracts/MetadataViews.cdc",
+        "aliases": {
+          "testnet": "0x631e88ae7f1d7c20"
+        }
+      },
+      "FungibleToken": {
+        "source": "./contracts/FungibleToken.cdc",
+        "aliases": {
+          "emulator": "0xee82856bf20e2aa6",
+          "testnet": "0x9a0766d93b6608b7"
+        }
+      },
+      "FlowToken": {
+        "source": "./contracts/FlowToken.cdc",
+        "aliases": {
+          "emulator": "0x0ae53cb6e3f42a79",
+          "testnet": "0x7e60df042a9c0868"
+        }
+      }
+    },
+    "networks": {
+      "emulator": "127.0.0.1:3569",
+      "testnet": "access.devnet.nodes.onflow.org:9000"
+    },
+    "accounts": {
+      "emulator-account": {
+        "address": "f8d6e0586b0a20c7",
+        "keys": "f8e188e8af0b8b414be59c4a1a15cc666c898fb34d94156e9b51e18bfde754a5"
+      },
+      "emu":{
+              "address":"01cf0e2f2f715450",
+              "key" : "0aa003bf36e9a3f161138e4c04ee3b6b1bfd5e8883f5b007bbf8c5fcfa9977c8"
+          }
+    },
+    "deployments": {
+      "emulator": {
+        "emulator-account": [
+          "TeleRacingPreSale",
+          "NFTStorefront",
+          "NonFungibleToken",
+          "MetadataViews"
+        ]
+      }
+    }
 }
+  

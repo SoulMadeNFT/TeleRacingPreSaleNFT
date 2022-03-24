@@ -46,8 +46,8 @@ transaction(name: String, storefrontAddress: Address) {
         while index < listingIDS.length{
             let frontListing = self.storefront.borrowListing(listingResourceID: listingIDS[index])??panic("No item with this id")
             let details = frontListing.getDetails()
-            let collection = getAccount(storefrontAddress).getCapability<&TeleRacingPreSale.Collection{NonFungibleToken.CollectionPublic, TeleRacingPreSale.TeleRacingPreSaleCollectionPublic}>(TeleRacingPreSale.CollectionPublicPath).borrow()
-            let itemInfo = collection!.borrowTeleRacingPreSale(id: details.nftID)
+            let collection = getAccount(storefrontAddress).getCapability<&{NonFungibleToken.CollectionPublic, TeleRacingPreSale.TeleRacingPreSaleCollectionPublic}>(TeleRacingPreSale.CollectionPublicPath).borrow() ?? panic("Could not get collection capability")
+            let itemInfo = collection.borrowTeleRacingPreSale(id: details.nftID)
             if itemInfo!.name == name {
                 self.listingResourceID = listingIDS[index]
                 // as for i can't use break, so i add length to limit

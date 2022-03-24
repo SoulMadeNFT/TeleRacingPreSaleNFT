@@ -24,16 +24,16 @@ pub contract TeleRacingPreSale: NonFungibleToken {
 
         //Change 1.Edition Number
         //Here are just two fields. There is no practical effect at present.
-        pub var editionNumber : Int64
-        pub var maxEdition: Int64 
+        pub var editionNumber : UInt64
+        pub var maxEdition: UInt64 
 
         init(
             id: UInt64,
             name: String,
             description: String,
             thumbnail: String,
-            editionNumber:Int64,
-            maxEdition: Int64 
+            editionNumber:UInt64,
+            maxEdition: UInt64 
         ) {
             self.id = id
             self.name = name
@@ -160,8 +160,8 @@ pub contract TeleRacingPreSale: NonFungibleToken {
             name: String,
             description: String,
             thumbnail: String,
-            editionNumber:Int64,
-            maxEdition:Int64
+            editionNumber:UInt64,
+            maxEdition:UInt64
         ) {
 
             // create a new NFT

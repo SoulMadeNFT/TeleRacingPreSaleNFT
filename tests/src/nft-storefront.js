@@ -98,3 +98,16 @@ export const purchaseByName = async (buyer,itemname,seller) => {
 
 	return sendTransaction({ name, args, signers });
 };
+
+/*
+ * Removes item with same id when listing be created again.
+ * @param {string} owner - owner address
+ * @param {UInt64} itemId - id of item to remove
+ * @returns {Promise<[{*} txResult, {error} error]>}
+ * */
+export const createListingRemoveExist = async (owner, itemId,price) => {
+	const name = "nftstorefront/create_listing_remove";
+	const signers = [owner];
+	const args = [itemId,price];
+	return sendTransaction({ name, args, signers });
+};

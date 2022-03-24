@@ -47,71 +47,71 @@ describe("NFT StoreFront",()=>{
 		await shallPass(deployNFTStorefront());
 	});
 
-	// it("should be able to create an empty Storefront", async () => {
-	// 	// Setup
-	// 	await deployNFTStorefront();
-	// 	const Alice = await getAccountAddress("Alice");
+	it("should be able to create an empty Storefront", async () => {
+		// Setup
+		await deployNFTStorefront();
+		const Alice = await getAccountAddress("Alice");
 
-	// 	await shallPass(setupStorefrontOnAccount(Alice));
-	// });
+		await shallPass(setupStorefrontOnAccount(Alice));
+	});
 
-	// it("should be able to create a listing", async () => {
-	// 	// Setup
-	// 	await deployNFTStorefront();
-	// 	const Alice = await getAccountAddress("Alice");
-	// 	await setupStorefrontOnAccount(Alice);
-	// 	// Mint TeleracingNFT for Alice's account
-	// 	await shallPass(mintTeleracing(Alice,"name1","des1","hash1",1,100))
-	// 	const itemID = 0;
+	it("should be able to create a listing", async () => {
+		// Setup
+		await deployNFTStorefront();
+		const Alice = await getAccountAddress("Alice");
+		await setupStorefrontOnAccount(Alice);
+		// Mint TeleracingNFT for Alice's account
+		await shallPass(mintTeleracing(Alice,"name1","des1","hash1",1,100))
+		const itemID = 0;
 
-	// 	await shallPass(createListing(Alice, itemID, toUFix64(1.11)));
-	// });
+		await shallPass(createListing(Alice, itemID, toUFix64(1.11)));
+	});
 
-	// it("should be able to accept a listing", async () => {
-	// 	// Setup
-	// 	await deployNFTStorefront();
-	// 	// Setup seller account
-	// 	const Alice = await getAccountAddress("Alice");
-	// 	await setupStorefrontOnAccount(Alice);
-	// 	await mintTeleracing(Alice,"name1","des1","hash1",1,100)
-	// 	const itemId = 0;
-	// 	// Setup buyer account
-	// 	const Bob = await getAccountAddress("Bob");
-	// 	await setupStorefrontOnAccount(Bob);
-	// 	await shallPass(mintFlow(Bob, toUFix64(100)));
-	// 	// Bob shall be able to buy from Alice
-	// 	const [sellItemTransactionResult] = await shallPass(createListing(Alice, itemId, toUFix64(1.11)));
-	// 	const listingAvailableEvent = sellItemTransactionResult.events[0];
-	// 	const listingResourceID = listingAvailableEvent.data.listingResourceID;
-	// 	await shallPass(purchaseListing(Bob, listingResourceID, Alice));
-	// 	const [itemCount] = await getTeleRacingCount(Bob);
-	// 	expect(itemCount).toBe(1);
-	// 	const [listingCount] = await getListingCount(Alice);
-	// 	expect(listingCount).toBe(0);
-	// });
+	it("should be able to accept a listing", async () => {
+		// Setup
+		await deployNFTStorefront();
+		// Setup seller account
+		const Alice = await getAccountAddress("Alice");
+		await setupStorefrontOnAccount(Alice);
+		await mintTeleracing(Alice,"name1","des1","hash1",1,100)
+		const itemId = 0;
+		// Setup buyer account
+		const Bob = await getAccountAddress("Bob");
+		await setupStorefrontOnAccount(Bob);
+		await shallPass(mintFlow(Bob, toUFix64(100)));
+		// Bob shall be able to buy from Alice
+		const [sellItemTransactionResult] = await shallPass(createListing(Alice, itemId, toUFix64(1.11)));
+		const listingAvailableEvent = sellItemTransactionResult.events[0];
+		const listingResourceID = listingAvailableEvent.data.listingResourceID;
+		await shallPass(purchaseListing(Bob, listingResourceID, Alice));
+		const [itemCount] = await getTeleRacingCount(Bob);
+		expect(itemCount).toBe(1);
+		const [listingCount] = await getListingCount(Alice);
+		expect(listingCount).toBe(0);
+	});
 
-	// it("should be able to remove a listing", async () => {
-	// 	// Deploy contracts
-	// 	await shallPass(deployNFTStorefront());
-	// 	// Setup Alice account
-	// 	const Alice = await getAccountAddress("Alice");
-	// 	await shallPass(setupStorefrontOnAccount(Alice));
-	// 	// Mint instruction shall pass
-	// 	await shallPass(mintTeleracing(Alice,"name1","des1","hash1",1,100));
-	// 	const itemId = 0;
-	// 	await getTeleracing(Alice, itemId);
-	// 	// Listing item for sale shall pass
-	// 	const [sellItemTransactionResult] = await shallPass(createListing(Alice, itemId, toUFix64(1.11)));
+	it("should be able to remove a listing", async () => {
+		// Deploy contracts
+		await shallPass(deployNFTStorefront());
+		// Setup Alice account
+		const Alice = await getAccountAddress("Alice");
+		await shallPass(setupStorefrontOnAccount(Alice));
+		// Mint instruction shall pass
+		await shallPass(mintTeleracing(Alice,"name1","des1","hash1",1,100));
+		const itemId = 0;
+		await getTeleracing(Alice, itemId);
+		// Listing item for sale shall pass
+		const [sellItemTransactionResult] = await shallPass(createListing(Alice, itemId, toUFix64(1.11)));
 
-	// 	const listingAvailableEvent = sellItemTransactionResult.events[0];
-	// 	const listingResourceID = listingAvailableEvent.data.listingResourceID;
+		const listingAvailableEvent = sellItemTransactionResult.events[0];
+		const listingResourceID = listingAvailableEvent.data.listingResourceID;
 
-	// 	// Alice shall be able to remove item from sale
-	// 	await shallPass(removeListing(Alice, listingResourceID));
+		// Alice shall be able to remove item from sale
+		await shallPass(removeListing(Alice, listingResourceID));
 
-	// 	const [listingCount] = await getListingCount(Alice);
-	// 	expect(listingCount).toBe(0);
-	// });
+		const [listingCount] = await getListingCount(Alice);
+		expect(listingCount).toBe(0);
+	});
 
 	it("should be pruchase item by name", async () => {
 		// Setup

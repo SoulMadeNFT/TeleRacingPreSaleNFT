@@ -11,8 +11,8 @@ pub struct NFT {
     pub let name: String
     pub let description: String
     pub let thumbnail: String
-    pub var editionNumber : Int64
-    pub var maxEdition: Int64 
+    pub var editionNumber : UInt64
+    pub var maxEdition: UInt64 
 
     pub let itemID:UInt64
     pub let resourceID: UInt64
@@ -26,8 +26,8 @@ pub struct NFT {
         itemID:UInt64,
         resourceID:UInt64,
         owner: Address,
-        editionNumber : Int64,
-        maxEdition: Int64 ,
+        editionNumber : UInt64,
+        maxEdition: UInt64 ,
         nftType: String,
     ) {
         self.name = name

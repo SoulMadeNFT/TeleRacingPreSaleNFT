@@ -13,8 +13,8 @@ transaction(
     name: String,
     description: String,
     thumbnail: String,
-    editionNumber:Int64,
-    maxEdition:Int64,
+    editionNumber:UInt64,
+    maxEdition:UInt64,
 ) {
 
     // local variable for storing the minter reference

@@ -11,6 +11,6 @@ pub fun main(address: Address): Int {
         )
         .borrow()
         ?? panic("Could not borrow public storefront from address")
-  
+
     return storefrontRef.getListingIDs().length
 }

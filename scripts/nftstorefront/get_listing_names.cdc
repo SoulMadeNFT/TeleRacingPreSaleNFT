@@ -64,8 +64,8 @@ pub fun main(address: Address): {UInt64:String} {
     for item in storefrontRef.getListingIDs(){
         let listing = storefrontRef.borrowListing(listingResourceID: item)??panic("No item with this id")
         let details = listing.getDetails()
-        let collection = getAccount(address).getCapability<&TeleRacingPreSale.Collection{NonFungibleToken.CollectionPublic, TeleRacingPreSale.TeleRacingPreSaleCollectionPublic}>(TeleRacingPreSale.CollectionPublicPath).borrow()
-        let itemInfo = collection!.borrowTeleRacingPreSale(id: details.nftID)
+        let collection = getAccount(address).getCapability<&{NonFungibleToken.CollectionPublic, TeleRacingPreSale.TeleRacingPreSaleCollectionPublic}>(TeleRacingPreSale.CollectionPublicPath).borrow() ?? panic("Could not get collection capability")
+        let itemInfo = collection.borrowTeleRacingPreSale(id: details.nftID)
         listName[item] = itemInfo!.name
     }
     return listName

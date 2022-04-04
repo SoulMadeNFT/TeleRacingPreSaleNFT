@@ -1,7 +1,5 @@
-// import NonFungibleToken from 0x631e88ae7f1d7c20
-// import MetadataViews from 0x631e88ae7f1d7c20
-import NonFungibleToken from "./NonFungibleToken.cdc"
-import MetadataViews from "./MetadataViews.cdc"
+import NonFungibleToken from 0x1d7e57aa55817448
+import MetadataViews from 0x1d7e57aa55817448
 
 pub contract TeleRacingPreSale: NonFungibleToken {
 
@@ -22,8 +20,7 @@ pub contract TeleRacingPreSale: NonFungibleToken {
         pub let description: String
         pub let thumbnail: String
 
-        //Change 1.Edition Number
-        //Here are just two fields. There is no practical effect at present.
+        //Edition Number
         pub var editionNumber : UInt64
         pub var maxEdition: UInt64 
 
